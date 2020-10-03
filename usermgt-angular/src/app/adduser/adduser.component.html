@@ -1,0 +1,66 @@
+
+<form #myform=ngForm (ngSubmit)="myform.valid &&  addUser(myform)">
+
+    <div class="col-7">
+        <input type="text" name="userType" placeholder="User Type" ngModel #typeCtrl=ngModel class="form-control" >    
+    </div>
+    
+    <div *ngIf="typeCtrl.errors!=null && typeCtrl.errors.required" class="error">
+     Type is required
+    </div>
+    
+  
+    <div class="col-7">
+        <input type="text" name="userName" placeholder="User Name"  ngModel #nameCtrl=ngModel class="form-control" >    
+    </div>
+    
+    <div *ngIf="nameCtrl.errors!=null && nameCtrl.errors.required" class="error">
+     Name is required
+    </div>
+    
+    <div class="col-7">
+        <input type="number" name="userPhone" placeholder="User Phone"  ngModel #phoneCtrl=ngModel class="form-control" >    
+    </div>
+    
+    <div *ngIf="phoneCtrl.errors!=null && phoneCtrl.errors.required" class="error">
+     phone is required
+    </div>
+
+    <div class="col-7">
+        <input type="text" name="password" placeholder="password"  ngModel #passwordCtrl=ngModel class="form-control" >    
+    </div>
+    
+    <div *ngIf="passwordCtrl.errors!=null && passwordCtrl.errors.required" class="error">
+     password is required
+    </div>
+      
+    <input type="submit" value="Submit"  class="btn btn-primary">    
+    
+    </form>
+        <br>
+        
+        <div class ="container" *ngIf="user!==undefined">
+         <h3>Airport Added </h3>   
+         <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">S.No</th>
+                <th scope="col">userId</th>
+                <th scope="col">userType</th>
+                <th scope="col">userName</th>
+                <th scope="col">userPhone</th>
+                <th scope="col">password</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>{{user.userId}}</td>
+                <td>{{user.userType}}</td>
+                <td>{{user.userName}}</td>
+                <td>{{user.userPhone}}</td>
+                <td>{{user.password}}</td>
+              </tr>
+              </tbody>
+              </table>
+        </div>
