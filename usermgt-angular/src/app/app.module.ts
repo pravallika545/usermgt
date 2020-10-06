@@ -9,13 +9,17 @@ import { GetalluserComponent } from './getalluser/getalluser.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdduserComponent,
     GetuserComponent,
-    GetalluserComponent
+    GetalluserComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
